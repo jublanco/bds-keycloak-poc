@@ -2,7 +2,8 @@
 This is a [Next.js](https://nextjs.org/) app. First to start this project run `npm install` to install all the libreries.
 Then, create a file in the root folder with the name `.env.local` to set the variables:
 
-```KEYCLOAK_ID= Your id from keycloak
+```
+KEYCLOAK_ID= Your id from keycloak
 KEYCLOAK_SECRET= Your secret Keycloak
 KEYCLOAK_ISSUER= Your issuer keycloak
 GITHUB_ID= Your github id
