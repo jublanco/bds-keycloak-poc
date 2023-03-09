@@ -1,8 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
+This is a [Next.js](https://nextjs.org/) app. First to start this project run `npm install` to install all the libreries.
+Then, create a file in the root folder with the name `.env.local` to set the variables:
 
-First, run the development server:
+```KEYCLOAK_ID= Your id from keycloak
+KEYCLOAK_SECRET= Your secret Keycloak
+KEYCLOAK_ISSUER= Your issuer keycloak
+GITHUB_ID= Your github id
+GITHUB_SECRET= Your github ud
+```
+And last run the app with:
 
 ```bash
 npm run dev
@@ -14,13 +20,8 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages. The page `http://localhost:3000/public` not required to signIn. The oter page like `http://localhost:3000/groups` and `http://localhost:3000/user` require signIn 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
@@ -36,3 +37,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## NextAuth.js
+
+This project use [NextAuth.js](https://next-auth.js.org/getting-started/introduction) for mor information put in the link.
+To agregate a new signin put the provider in the file `src/page/api/auth/[...nextauth].js` as shown in provider on the page from [NextAuth.js](https://next-auth.js.org/providers/)
