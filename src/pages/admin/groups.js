@@ -14,14 +14,14 @@ function AdminGroups({ data }) {
     if (!session) {
       return {
         redirect: {
-          destination: '/api/auth/signin?callbackUrl=http://localhost:3000/admin/groups',
+          destination: '/api/auth/signin?callbackUrl=http://localhost:3001/admin/groups',
           permanent: false
         }
       }
     }
     return {
       props: {
-        data: 'Sección de Grupos',
+        data: 'Hola Well!!!, Sección de Grupos Aplicación 2',
         session
       }
     }
