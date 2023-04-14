@@ -1,13 +1,18 @@
 import {getSession, useSession} from 'next-auth/react';
+import { useState } from 'react';
 
 function AdminUser({ data }) {
     const session = useSession()
-    console.log({ session })
+    const [response, setResponse] = useState(null)
 
     const handleClick = () => {
-      fetch('/api/hello')
+      fetch('/api/hello', {
+        headers: {
+          Authorization: `Bearer ${session.accessToken}`,
+        },
+      })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => console.log(data), setResponse(data))
       .catch(error => console.error(error))
     }
   
