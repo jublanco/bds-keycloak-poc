@@ -3,12 +3,17 @@ import {getSession, useSession} from 'next-auth/react';
 function AdminUser({ data }) {
     const session = useSession()
     console.log({ session })
+
+    const handleClick = () => {
+      fetch('/api/hello')
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error))
+    }
   
     return <div>
     <h2 style={{ textAlign: 'center' }}>User page - {data}</h2>
-      <button onClick={()=>{fetch('/api/hello')
-      .then(response => response.JSON.stringify(data))
-        .then(data => console.log(data));}}>  Boton Test </button>
+      <button onClick={handleClick}>  Boton Test </button>
     </div>
   }
   
